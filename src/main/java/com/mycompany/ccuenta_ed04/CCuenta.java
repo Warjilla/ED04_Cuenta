@@ -88,12 +88,22 @@ public class CCuenta {
         return getSaldo();
     }
 
+    /**
+     * Este metodo permite ingresar una cantidad de dinero
+     * @param cantidad cantidad a ingresar. Debe ser mayor que cero
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
+
+    /**
+     * Este metodo permite retirar una cantidad de la cuenta, mientras que 
+     *  haya saldo disponible.
+     * @param cantidad cantidad a retirar
+     */
 
     public void retirar(double cantidad) throws Exception
     {

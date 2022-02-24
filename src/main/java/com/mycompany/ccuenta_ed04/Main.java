@@ -14,6 +14,10 @@ public class Main {
         operativa_cuenta(2500);               
     }
     
+    /**
+    * Esta funcion gestiona la operativa de una cuenta corriente.
+    * @param cantidad. cantidad inicial de la cuenta.
+    */
     public static void operativa_cuenta(float cantidad){
         CCuenta cuenta1;
         double saldoActual;

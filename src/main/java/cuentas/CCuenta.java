@@ -66,51 +66,51 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
-
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
-    public CCuenta()
-    {
+    public CCuenta() {
     }
 
-    public CCuenta(String nom, String cue, double sal, double tipo)
-    {
-        nombre =nom;
-        cuenta=cue;
-        saldo=sal;
+    public CCuenta(String nom, String cue, double sal, double tipo) {
+        nombre = nom;
+        cuenta = cue;
+        saldo = sal;
     }
 
-    public double estado()
-    {
+    /**
+     * 
+     * @return saldo disponible
+     */
+    public double estado() {
         return getSaldo();
     }
 
     /**
      * Este metodo permite ingresar una cantidad de dinero
+     * 
      * @param cantidad cantidad a ingresar. Debe ser mayor que cero
      */
-    public void ingresar(double cantidad) throws Exception
-    {
-        if (cantidad<0)
+    public void ingresar(double cantidad) throws Exception {
+        if (cantidad < 0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
 
     /**
-     * Este metodo permite retirar una cantidad de la cuenta, mientras que 
-     *  haya saldo disponible.
+     * Este metodo permite retirar una cantidad de la cuenta, mientras que
+     * haya saldo disponible.
+     * 
      * @param cantidad cantidad a retirar
      */
 
-    public void retirar(double cantidad) throws Exception
-    {
+    public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado()< cantidad)
-            throw new Exception ("No se hay suficiente saldo");
+            throw new Exception("No se puede retirar una cantidad negativa");
+        if (estado() < cantidad)
+            throw new Exception("No se hay suficiente saldo");
         setSaldo(getSaldo() - cantidad);
     }
 }
